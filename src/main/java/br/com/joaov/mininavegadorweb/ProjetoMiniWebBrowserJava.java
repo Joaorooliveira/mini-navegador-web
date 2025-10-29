@@ -10,24 +10,30 @@ import javafx.scene.web.WebView;
 import java.io.IOException;
 
 public class ProjetoMiniWebBrowserJava extends Application {
+
     @Override
     public void start(Stage palco) throws IOException {
         TextField campoUrl = new TextField();
         WebView navegador = new WebView();
         WebEngine motor = navegador.getEngine();
 
-        //Carregar uma pagina da web quando o usuario pressionar Enter
-        campoUrl.setOnAction(evento -> {
-            motor.load(campoUrl.getText());
-        });
+        // Chamada ao método corrigido
+        campoUrl.setOnAction(evento -> motor.load(formataUrl(campoUrl.getText())));
 
         VBox vbox = new VBox();
         vbox.getChildren().addAll(campoUrl, navegador);
-        Scene cena =  new Scene(vbox);
+        Scene cena = new Scene(vbox);
 
         palco.setTitle("Meu Browser Java");
         palco.setScene(cena);
         palco.show();
+    }
 
+
+    private String formataUrl (String url){
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            url = "http://" + url;
+        }
+        return url;
     }
 }
