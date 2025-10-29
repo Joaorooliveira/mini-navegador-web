@@ -32,7 +32,7 @@ Maven (Para gerenciamento de dependências e build do projeto)
 
 Para rodar este projeto localmente, você precisará ter o Java (JDK) e o Maven instalados em sua máquina.
 
-Clone o repositório: (Utilize o nome do seu projeto)
+Clone o repositório: 
 
 git clone [[https://github.com/seu-usuario/mininavegadorweb.git](https://github.com/seu-usuario/mininavegadorweb.git)]
 
